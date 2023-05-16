@@ -13,7 +13,7 @@ public class Mahasiswa {
     private String namaMhs;
     private Prodi prodi;
 
-    public Mahasiswa(String npm,String namaMhs, Prodi prodi) {
+    public Mahasiswa(String npm, String namaMhs, Prodi prodi) {
         this.npm = npm;
         this.namaMhs = namaMhs;
         this.prodi = prodi;

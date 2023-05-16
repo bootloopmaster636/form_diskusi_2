@@ -33,12 +33,12 @@ public class MahasiswaControl {
         mDao.deleteMahasiswa(npm);
     }
 
-    public String searchMahasiswa(String npm) {
-        Mahasiswa m = mDao.SearchMahasiswa(npm);
-        String result = "";
-        if (m != null) {
-            result = m.getNamaMahasiswa();
-        }
-        return result;
-    }
+//    public String searchMahasiswa(String npm) {
+//        Mahasiswa m = mDao.SearchMahasiswa(npm);
+//        String result = "";
+//        if (m != null) {
+//            result = m.getNamaMahasiswa();
+//        }
+//        return result;
+//    }
 }

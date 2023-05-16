@@ -311,8 +311,8 @@ public class MahasiswaView extends javax.swing.JFrame {
         switch (getAnswer) {
             case 0: //jika jawaban user adalah Yes
                 // Isilah code di sini……
-                String npm = mc.searchMahasiswa(txtNPM.getText());
-                mc.deleteDataMahasiswa(npm);
+//                String npm = mc.searchMahasiswa(txtNPM.getText());
+                mc.deleteDataMahasiswa(tblMahasiswa.getValueAt(tblMahasiswa.getSelectedRow(), 0).toString());
                 setComponent(false);
                 setEditDeleteBtn(false);
                 clearText();

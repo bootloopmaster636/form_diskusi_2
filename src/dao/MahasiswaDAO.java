@@ -117,40 +117,4 @@ public class MahasiswaDAO {
         dbcon.closeConnection();
         return list;
     }
-
-    public String SearchMahasiswa(String query) {
-        con = dbcon.makeConnection();
-
-        String sql = "SELECT m.*, p.* FROM mahasiswa as m JOIN prodi as p ON m.kode_prodi = p.kode_prodi WHERE (m.npm LIKE "
-                + "'%" + query + "%'"
-                + "OR m.nama_mhs LIKE '%" + query + "%'"
-                + "OR p.nama_prodi LIKE '%" + query + "%')";
-
-        System.out.println("Mengambil data Mahasiswa...");
-        List<Mahasiswa> list = new ArrayList();
-
-        try {
-            Statement statement = con.createStatement();
-            ResultSet rs = statement.executeQuery(sql);
-
-            if (rs != null) {
-                while (rs.next()) {
-                    Prodi p = new Prodi(rs.getString("p.kode_prodi"),
-                            rs.getString("p.nama_prodi"));
-
-                    Mahasiswa m = new Mahasiswa(rs.getString("m.npm"),
-                            rs.getString("m.nama_mhs"), p);
-
-                    list.add(m);
-                }
-            }
-            rs.close();
-            statement.close();
-        } catch (Exception e) {
-            System.out.println("Error reading database...");
-            System.out.println(e);
-        }
-        dbcon.closeConnection();
-        return sql;
-    }
 }
